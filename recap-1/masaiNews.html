@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>masai news with Flex and Box Model</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .navBar{
+        display: flex;
+        justify-content: space-around;
+        height: 50px;
+      }
+      #contenar {
+        margin-bottom: 10px;
+        width: 95%;
+        margin: auto;
+      }
+      .newsHead {
+        text-align: center;
+        margin: 70px auto;
+      }
+      .newsHead > h1 {
+        font-size: 60px;
+        margin-bottom: 30px;
+      }
+      .newsHead > p {
+        font-size: 24px;
+      }
+      .newsContent {
+        display: flex;
+      }
+      .newsCard {
+        margin: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 10px;
+      }
+      .box1 {
+        margin: 25px 0px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .box2 h1 {
+        color: rgb(74, 196, 236);
+        margin-bottom: 1rem;
+      }
+      .box2 h3,
+      p {
+        margin-bottom: 16px;
+      }
+      .eventImg {
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navBar">
+      <div class="navLogo">
+        <img src="https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/masai_logo.svg" alt="" />
+      </div>
+      <div class="navList">
+        <p>Welcom To Masai News Room Page Demo Test</p>
+      </div>
+    </header>
+    <div id="contenar">
+      <div class="newsHead">
+        <h1>Newsroom</h1>
+        <p>
+          We are often covered in the news, for all the right reasons. Learn all
+          about our success stories, placement updates, investment and
+          acquisition announcements, future roadmap and more in our press
+          coverage.
+        </p>
+      </div>
+      <div class="newsContent">
+        <!-- event card list -->
+        <div class="newsCard">
+          <div class="box1">
+            <img
+              class="eventImg"
+              src="https://masai-website-images.s3.ap-south-1.amazonaws.com/PR_Article_Prateek_Shukla_Gen_AI_92324e2d6b.jpeg"
+              alt=""
+            />
+          </div>
+          <div class="box2">
+            <h1>28 Aug 2023</h1>
+            <h3>Empowering Education Through GenAI</h3>
+            <p>
+              In the dynamic landscape of today’s job market, Gen AI plays a
+              significant ...
+            </p>
+          </div>
+        </div>
+        <div class="newsCard">
+          <div class="box1">
+            <img
+              class="eventImg"
+              src="https://masai-website-images.s3.ap-south-1.amazonaws.com/PR_Thungy_1_420b226e5b.webp"
+              alt=""
+            />
+          </div>
+          <div class="box2">
+            <h1>05 May 2023</h1>
+            <h3>Masai School targets fivefold revenue growth in three years</h3>
+            <p>
+              Masai School's growth plans indicate that the demand for skilled
+              workers in...
+            </p>
+          </div>
+        </div>
+        <div class="newsCard">
+          <div class="box1">
+            <img
+              class="eventImg"
+              src="https://masai-website-images.s3.ap-south-1.amazonaws.com/PR_Thingy_2_f2c52e6fcf.webp"
+              alt=""
+            />
+          </div>
+          <div class="box2">
+            <h1>25 May 2023</h1>
+            <h3>
+              Beyond Degrees: Embracing Alternative Credentialing and
+              Micro-learning in Tech Recruitment
+            </h3>
+            <p>
+              The enduring presence of alternative credentialing and
+              microlearning indica...
+            </p>
+          </div>
+        </div>
+        <div class="newsCard">
+          <div class="box1">
+            <img
+              class="eventImg"
+              src="https://masai-website-images.s3.ap-south-1.amazonaws.com/EI_Image_ef4ad61d8f.png"
+              alt=""
+            />
+          </div>
+          <div class="box2">
+            <h1>13 Feb 2024</h1>
+            <h3>The Skill Emphasizer: Prateek Shukla, CEO & Founder, Masai</h3>
+            <p>
+              Over five years, the educational institution has transformed the
+              careers of...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

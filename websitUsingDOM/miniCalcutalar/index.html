@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgb(8, 7, 27);
+      }
+      .contenar {
+        margin: auto;
+        background-color: rgb(11, 10, 39);
+        width: 35%;
+        height: 600px;
+        text-align: center;
+        box-shadow: 0px 0px 10px 0px rgba(180, 180, 180, 0.74);
+        border-radius: 10px;
+      }
+      .hed {
+        color: aliceblue;
+        padding-top: 20px;
+      }
+      .main {
+        background-color: rgb(39, 5, 70);
+        width: 80%;
+        /* height: 300px; */
+        margin: 40px auto;
+        border-radius: 20px;
+        box-shadow: 0xp 0px 1px 2px rgb(247, 245, 245);
+      }
+      .inptBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+      }
+      #inputBox1, #inputBox2 {
+        width: 90%;
+        height: 35px;
+        border-radius: 19px;
+        background-color: rgb(224, 205, 165);
+        font-size: 16px;
+        text-align: center;
+      }
+      .numberBox {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .keyPad {
+        display: flex;
+        justify-content: center;
+        margin: 16px auto;
+        gap: 20px;
+        height: 260px;
+      }
+      .numberBox {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 50%;
+      }
+      .formulaBox {
+        display: grid;
+        gap: 13px;
+        width: 10%;
+      }
+
+      .bx,
+      .formulaBox button {
+        font-size: 25px;
+        border-radius: 19px;
+      }
+      .calBox {
+        display: flex;
+        justify-content: space-evenly;
+        /* margin: 20px auto; */
+        padding: 12px;
+      }
+      #calBtn,
+      #cleBtn {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenar">
+      <div class="hed">
+        <h1>Mini Calculator</h1>
+      </div>
+      <div class="main">
+        <!-- creat two input box for taking user input -->
+        <div class="inptBox">
+          <input type="text" id="inputBox1" placeholder="Enter Your Number" />
+          <input type="text" id="inputBox2" placeholder="Enter Your Number" />
+        </div>
+        <!-- creat calculate button for taking user input -->
+        <div class="keyPad">
+          <div class="numberBox">
+            <button class="bx">1</button>
+            <button class="bx">2</button>
+            <button class="bx">3</button>
+            <button class="bx">4</button>
+            <button class="bx">5</button>
+            <button class="bx">6</button>
+            <button class="bx">7</button>
+            <button class="bx">8</button>
+            <button class="bx">9</button>
+            <button class="bx">.</button>
+            <button class="bx">0</button>
+            <button class="bx">.</button>
+          </div>
+          <div class="formulaBox">
+            <button class="add">+</button>
+            <button class="sub">-</button>
+            <button class="devi">/</button>
+            <button class="muti">*</button>
+          </div>
+        </div>
+        <div class="calBox">
+          <button id="calBtn">Calculate</button>
+          <button id="cleBtn">Clear</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="contenar">
+      <div class="hed">
+        <h1>Mini Calculator js</h1>
+      </div>
+      <div class="main">
+        <!-- creat two input box for taking user input -->
+        <div class="inptBox">
+          <input type="text" id="inputBox1" placeholder="Enter Your Number"/>
+          <input type="text" id="inputBox2" placeholder="Enter Your Number" />
+        </div>
+        <!-- creat calculate button for taking user input -->
+        <div class="keyPad">
+          <div class="formulaBox">
+            <button class="add">ADD +</button>
+            <button class="sub">Subtract -</button>
+            <button class="devi">Divide /</button>
+            <button class="muti">Multiply *</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <h1 class="display">0</h1>
+      </div>
+    </div>
+    <script>
+
+let inbx1 = document.querySelector("#inputBox1").value;
+let inbx2 = document.querySelector("#inputBox2").value;
+
+let adding = document.querySelector(".add")
+let sub = document.querySelector(".sub");
+let devi = document.querySelector(".devi");
+let muti = document.querySelector(".muti");
+let display = document.querySelector(".display");
+
+let num1= Number(inbx1)
+let num2= Number(inbx2)
+
+console.log(typeof number);
+let add = function (a, b) {
+  return(a + b);
+};
+let subt = function (a, b) {
+  return(a - b);
+};
+let multi = function (a, b) {
+  return(a * b);
+};
+let dev = function (a, b) {
+  return(a / b);
+};
+
+adding.addEventListener("click", function(){
+        add(inbx1, inbx2)
+        display.textContent = `Adding total: ${add(num1,num2)}`
+});
+sub.addEventListener("click", function(){
+  subt(inbx1, inbx2)
+        display.textContent = ` Subtract total: ${subt(num1,num2)}`
+});
+muti.addEventListener("click", function(){
+  multi(inbx1, inbx2)
+        display.textContent = `Multiply total: ${multi(num1,num2)}`
+});
+devi.addEventListener("click", function(){
+  dev(inbx1, inbx2)
+        display.textContent = `Divide total: ${dev(num1,num2)}`
+});
+
+
+    </script>
+  </body>
+</html>

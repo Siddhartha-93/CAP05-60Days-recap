@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      header{
+        text-align: center;
+        font-size: 30px;
+      }
+      #root {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 55px auto;
+        width: 90%;
+      }
+      .card {
+        width: 265px;
+        border-radius: 10px;
+        text-align: center;
+        overflow: hidden;
+        height: 425px;
+        box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+      }
+      .card p {
+        font-size: 20px;
+        color: gray;
+      }
+      .card > img {
+        width: 100%;
+        max-width: 100%;
+      }
+      .card > .logo {
+        width: 50%;
+        max-width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Our Investors</h1>
+    </header>
+    <div id="root">
+    </div>
+
+    <script>
+      let data = [
+        {
+          image:
+            "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+          name: "Vijay Shekhar Sharma",
+          post: "Founder & CEO",
+          postimg:
+            "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg",
+        },
+        {
+          image:
+            "https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+          name: "Kunal Shah",
+          post: "Founder",
+          postimg:
+            "https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png",
+        },
+        {
+          image:
+            "https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg",
+          name: "Amrish Rau",
+          post: "CEO",
+          postimg:
+            "https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png",
+        },
+        {
+          image:
+            "https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg",
+          name: "Sampad Swain",
+          post: "Co-Founder & CEO",
+          postimg:
+            "https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png",
+        },
+      ];
+
+      let root = document.querySelector("#root");
+     
+      let datas = data.map(function (ele) {
+        let card = document.createElement("div");
+        card.className = "card";
+        let h3 = document.createElement("h3");
+        let p = document.createElement("p");
+        let img = document.createElement("img");
+        let pimg = document.createElement("img");
+        pimg.className = "logo";
+        img.src = ele.image;
+        h3.innerText = ele.name;
+        p.innerText = ele.post;
+        pimg.src = ele.postimg;
+        card.append(img, h3, p, pimg);
+        return card;
+      });
+      root.append( ...datas);
+    </script>
+  </body>
+</html>
