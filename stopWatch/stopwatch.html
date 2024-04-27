@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .contenar {
+        width: 60%;
+        margin: auto;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        height: 325px;
+      }
+      .bx1 {
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+        margin: 55px auto;
+      }
+      .contenar > h1 {
+        font-size: 56px;
+      }
+      button {
+        margin: 10px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenar">
+      <h1>StopWatch</h1>
+      <div class="bx1">
+        <h1 id="hr">00</h1>
+        <h1>:</h1>
+        <h1 id="min">00</h1>
+        <h1>:</h1>
+        <h1 id="sec">00</h1>
+      </div>
+      <div class="bx2">
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    let hrTag = document.getElementById("hr");
+    let minTag = document.getElementById("min");
+    let secTag = document.getElementById("sec");
+
+    let hr = 0;
+    let min = 0;
+    let sec = 0;
+    let count = 0;
+    let timer = false;
+
+    function stopWatch() {
+      count = count + 1;
+      if (timer == true) {
+        sec = sec + 1;
+        if (sec == 60) {
+          min = min + 1;
+          sec = 0;
+        }
+        if (min == 60) {
+          hr = hr + 1;
+          min = 0;
+          sec = 0;
+        }
+      }
+      if (sec == 0) {
+        secTag.innerHTML = sec;
+      } else{
+        secTag.innerHTML = `${sec} sec`;
+      }
+      if (min == 0) {
+        minTag.innerHTML = min;
+      } else{
+        minTag.innerHTML = `${min} min`;
+      }
+      if (hr == 0) {
+        hrTag.innerHTML = hr;
+      } else{
+        hrTag.innerHTML = `${hr} hr`;
+      }
+     
+      
+    }
+
+    let timeer = setInterval(stopWatch, 1000);
+    function start() {
+      if (timer == false) {
+        timer = true;
+        timeer;
+      }
+    }
+
+    function pause() {
+      if (timer == true) {
+        timer = false;
+      }
+    }
+
+    function reset() {
+      count = 0;
+      if ((count = 0)) {
+        clearInterval(timeer);
+      }
+      timer = false;
+      hr = 0;
+      min = 0;
+      sec = 0;
+      hrTag.innerHTML = hr;
+      minTag.innerHTML = min;
+      secTag.innerHTML = sec;
+    }
+    let starts = document.querySelector("#start");
+    let pausee = document.querySelector("#pause");
+    let resett = document.querySelector("#reset");
+
+    starts.addEventListener("click", start);
+    pausee.addEventListener("click", pause);
+    resett.addEventListener("click", reset);
+  </script>
+</html>

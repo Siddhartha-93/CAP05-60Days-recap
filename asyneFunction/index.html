@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wellpaper sladier</title>
+</head>
+<body>
+    <div class="root">
+
+    </div>
+
+</body>
+<script>
+// Create a slide show with at least 20 images (take some dummy images)
+// There should be a button to stop the slide show and start the slide show (see if you can do both start and stop using single button)
+// Provide a next and previous button below the slide show.
+// On clicking the next or previous button the automatic slide show will stop
+// And it will work as a normal slider. 
+
+let root = document.querySelector(".root");
+
+let data = []
+
+let sliderData = async (url)=>{
+   let req =  await fetch(url)
+ let res = await req.json()
+  console.log(res)
+}
+
+console.log("start");
+sliderData()
+console.log("end");
+
+
+</script>
+
+</html>

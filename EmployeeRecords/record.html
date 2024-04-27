@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Record list</title>
+    <style>
+      .cont {
+        width: 70%;
+        margin: auto;
+        margin-top: 50px;
+        text-align: center;
+      }
+      table {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <table>
+        <!-- Dont change order of columns -->
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Employee ID</th>
+            <th>Department</th>
+            <th>Experience in years</th>
+            <th>Email address</th>
+            <th>Mobile Number</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Append your output here -->
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <script>
+    let tbody = document.querySelector("tbody");
+
+    let data = [];
+
+    // let arr = JSON.parse(localStorage.getItem("rcData")) || [];
+    function loadData() {
+      let savedData = JSON.parse(localStorage.getItem("rcData")) || [];
+
+      if (savedData) {
+        data = savedData;
+      }
+    }
+    loadData();
+    console.log(data);
+
+    function showData(arr) {
+      tbody.innerHTML = "";
+      let role = "";
+      // creating html element
+      let narr = arr.map((ele, i) => {
+        console.log(ele.experience);
+
+        let tr = document.createElement("tr");
+
+        let td1 = document.createElement("td");
+        td1.innerText = ele.name;
+
+        let td2 = document.createElement("td");
+        td2.innerText = ele.employeeID;
+
+        let td3 = document.createElement("td");
+        td3.innerText = ele.department;
+
+        let td4 = document.createElement("td");
+        td4.innerText = ele.experience;
+
+        let td5 = document.createElement("td");
+        td5.innerText = ele.email;
+
+        let td6 = document.createElement("td");
+        td6.innerText = ele.mobile;
+
+        let td7 = document.createElement("td");
+        if (ele.experience == "") {
+          role = "NA";
+        } else {
+          if (ele.experience > 5) {
+            role = "Senior";
+          } else if (2 < ele.experience && 5 > ele.experience) {
+            role = "Junior";
+          } else if (ele.experience <= 1) {
+            role = "Fresher";
+          }
+        }
+        td7.innerText = role;
+
+        tr.append(td1, td2, td3, td4, td5, td6, td7);
+        tbody.append(tr);
+      });
+    }
+
+    showData(data);
+  </script>
+</html>

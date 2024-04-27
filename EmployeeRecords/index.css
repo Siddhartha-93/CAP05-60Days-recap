@@ -1,0 +1,68 @@
+/* Fill CSS here */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+h1 {
+  margin: 30px auto;
+  text-align: center;
+  color: #6868ec;
+  text-decoration: underline;
+  font-size: 40px;
+}
+div {
+  display: flex;
+  justify-content: space-evenly;
+  /* gap: 10px; */
+  margin: 80px auto;
+  padding: 12px;
+}
+form {
+  width: 25%;
+  font-size: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 10px;
+  height: 395px;
+}
+form input {
+  margin-bottom: 10px;
+  width: 95%;
+  height: 22px;
+}
+input[type="submit"] {
+  width: 100%;
+  margin: 10px auto;
+  font-size: 20px;
+  height: 30px;
+  border-radius: 6px;
+  border-style: none;
+  background: #0068a9;
+  color: whitesmoke;
+}
+
+table {
+  width: 80%;
+  height: max-content;
+  font-size: 19px;
+}
+thead {
+  background: #0068a9;
+  color: white;
+  text-align: center;
+}
+th {
+  padding: 3px;
+}
+tr {
+  text-align: center;
+}
+.event {
+  margin: 6px 0px;
+  text-align: center;
+  width: 5%;
+  padding: 0px;
+}
+select#filterDip {
+  height: max-content;
+  width: 60px;
+}

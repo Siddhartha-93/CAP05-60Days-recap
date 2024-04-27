@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In Page</title>
+    <style>
+      .contenar{
+        width: 50%;
+        margin: auto;
+      }
+      .hed{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin: 30px auto;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="contenar">
+      <div class="hed">
+        <h1>Welcome to Log In Page</h1>
+        <a href="singup.html">For Sing Up Click Here</a>
+      </div>
+      <div class="login">
+        <form>
+          <label>Enter Your Name</label><br />
+          <input
+            id="name"
+            type="text"
+            placeholder="Enter your username "
+          /><br />
+          <label>Select Your Role</label><br />
+          <select name="" id="role">
+            <option>Your Role</option>
+            <option value="employee">Employee</option>
+            <option value="hr">HR</option></select
+          ><br />
+          <label>Enter Your passoword</label><br />
+          <input
+            id="password"
+            type="password"
+            placeholder="Enter your passoword"
+          />
+          <br />
+          <input type="submit" />
+        </form>
+      </div>
+      <div>
+        <h3></h3>
+      </div>
+    </div>
+  </body>
+  <script>
+    let form = document.querySelector("form");
+    let name = document.querySelector("#name");
+    let passoword = document.querySelector("#password");
+    let role = document.querySelector("#role");
+    let display = document.querySelector("h3")
+
+
+
+    let loginData = [];
+
+    
+    let hendelSubmit = (e) => {
+      display.innerText = ""
+      e.preventDefault();
+      let obj = {
+        name: name.value,
+        password: passoword.value,
+        role: role.value,
+      };
+      // console.log(obj);
+      loginData.push(obj);
+
+      let arr = JSON.parse(localStorage.getItem("logData")) || []
+    //   console.log(arr);  // get sing up data from local storage
+    if(arr == ""){
+      alert("Place Sing Up Your Self ", window.location.href = "singup.html")
+      console.log("sing up");
+    }
+    else{
+      console.log(arr);
+      arr.map((ele) => {
+        if (ele.name == obj.name && ele.password == obj.password) {
+
+          if (ele.role == obj.role) {
+            // console.log("login as " + ele.role); // login as on Role
+
+            if (ele.isAuth == true) {
+              alert(`Wellcome HR ${obj.name}`,window.location.href = "index.html")
+            }
+            if (ele.isAuth == false) {
+              // window.location.href = "record.html";
+              alert(`View Our Employee ${obj.name}`,window.location.href = "record.html")
+              
+            }
+          }
+          // console.log("login faild for invalid" + "" + ele.role);
+          display.innerText = `login faild for invalid ${obj.role}`
+        }
+        else{
+          // console.log(" User name and passaword is incarect")
+          display.innerText= " User name and passaword is incarect"
+        
+
+        }
+      });
+
+    }
+      form.reset();
+    };
+
+
+    form.addEventListener("submit", (e) => {
+      hendelSubmit(e);
+    });
+//  if (loginData == ""){
+//   isAuth = true
+//   if(isAuth){
+//     Window.location.href = "singup.html"
+//   }
+//  }
+
+  </script>
+</html>

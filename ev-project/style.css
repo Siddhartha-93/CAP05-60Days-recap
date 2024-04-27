@@ -1,0 +1,55 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.contenar{
+    margin: 10px;
+    padding: 10px;
+}
+.header {
+    margin: 16px auto;
+    /* border: 1px solid; */
+    display: flex;
+    background: aliceblue;
+  }
+.nav_bar{
+    margin: 5px;
+}
+#logo {
+    text-decoration: none;
+    font-size: 50px;
+    margin: 0px 53px;
+  }
+#serchBar {
+    font-size: x-large;
+ }
+ #SearchButn {
+    font-size: larger;
+  }
+ #SearchButn:hover {
+    background: burlywood;
+  }
+  #shot_iteam {
+    height: 30px;
+    margin-top: 30px;
+    
+  }
+/* js-- Element */
+#root{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.user_card{
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0px 0px 6px ;
+}
+.user_card > img {
+    width: 200px;
+    max-width: 100px;
+    height: 100px;
+}
+.hide{
+    display: none;
+}

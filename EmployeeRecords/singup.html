@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sing Up Page</title>
+    <style>
+        .contenar{
+            width: 60% ;
+            margin: auto;
+         
+        }
+        .hed{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin: 30px auto;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="contenar">
+        <div class="hed">
+            <h1>Welcome to Masai Records Room</h1>
+            <a href="login.html">For Log In Click Here</a>
+        </div>
+            
+            <div class="singup">
+                <h3>Sing Up For Your Account</h3>
+                <form>
+                    <label>Enter Your Name</label><br>
+                    <input id = "name" type="text" placeholder="Enter your username "><br>
+                    <label>Select Your Role</label><br>
+                    <select name="" id="role">
+                        <option>Your Role</option>
+                        <option value="employee">Employee</option>
+                        <option value="hr">HR</option>
+                    </select><br>
+                    <label>Enter Your passoword</label><br>
+                    <input id = "password" type="password" placeholder="Enter your passoword"> <br>
+                    <input type="submit"> 
+                </form>
+            </div>
+    </div>
+
+
+</body>
+<script >
+ let form = document.querySelector("form")
+ let name = document.querySelector("#name")
+ let passoword = document.querySelector("#password")
+ let role = document.querySelector("#role")
+let isAuth;
+
+let hendelSubmit = (e)=>{
+    e.preventDefault()
+
+       
+    let obj = {
+        name : name.value,
+        password : passoword.value,
+        role : role.value,
+        isAuth
+    }
+    if (obj.role == "hr"){
+            obj.isAuth = true
+        }
+        else{
+             obj.isAuth = false
+        }
+    
+    console.log(obj)
+    saveData(obj)
+    form.reset()
+    alert("Sing Up succesfull", window.location.href = "login.html")
+}
+
+let saveData = (obj)=>{
+    let arr = JSON.parse(localStorage.getItem("logData")) || []
+    console.log(arr);
+    arr.push(obj)
+    localStorage.setItem("logData" , JSON.stringify(arr))
+    console.log(arr);
+}
+
+
+
+form.addEventListener("submit" , function(e){
+    hendelSubmit(e)
+})
+
+</script>
+</html>
