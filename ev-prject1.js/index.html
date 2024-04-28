@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Management System</title>
+    <style>
+      .hed {
+          text-align: center;
+      }
+  
+      .navBar {
+    margin: 28px auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+table {
+    width: 74%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+thead {
+    background: #f2f2f2;
+    font-size: 20px;
+    text-align: justify;
+}
+tbody > tr {
+    font-size: 18px;
+    box-shadow: 0px 1px #f2f2f2;
+    height: 40px;
+}
+/* js element  */
+.pagination {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 16px auto;
+}
+button {
+    width: 10%;
+    height: 35px;
+    font-size: 16px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="contenar">
+      <div class="hed">
+        <h1>Employee Management System</h1>
+      </div>
+      <div>
+        <div class="navBar">
+          <div>
+            <!-- this input tag for Department -->
+            <label for="Department">Filter By Department</label>
+            <select name="" id="department">
+              <option value="all">Department</option>
+              <option value="hr">hr</option>
+              <option value="finance">finance</option>
+              <option value="marketing">marketing</option>
+              <option value="engineering">engineering</option>
+              <option value="operations">operations</option>
+            </select>
+          </div>
+          <div>
+            <!-- this input tag for gender -->
+            <label for="gender">Filter By Gender</label>
+            <select name="" id="gender">
+              <option value="gender">gender</option>
+              <option value="male">male</option>
+              <option value="female">female</option>
+            </select>
+          </div>
+          <div>
+            <!-- this input tag for Department -->
+            <label for="sotr">Sort By Salary</label>
+            <select name="" id="sort">
+              <option value="all">salary sort</option>
+              <option value="low">low to high</option>
+              <option value="high">high to low</option>
+            </select>
+          </div>
+        </div>
+        <div id="root">
+          <!-- send DOM through js -->
+          <table>
+            <thead>
+              <tr>
+                <th>S.no</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Salary</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
