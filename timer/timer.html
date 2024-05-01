@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .contenar {
+        width: 60%;
+        margin: auto;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .bx1 {
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+        margin: 45px auto;
+      }
+      .contenar > h1 {
+        font-size: 56px;
+      }
+      button {
+        margin: 10px;
+        font-size: 18px;
+      }
+      input {
+    height: 33px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 1px 0px 2px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="contenar">
+      <h1> Wellcom To Timer</h1>
+      <form>
+        <input type="number" class="hrr" placeholder="Enter Hours" />
+        <input type="number" class="mini" placeholder="Enter Minutes" />
+        <input type="number" class="secc" placeholder="Enter second" />
+        <input type="submit" />
+      </form>
+      <div class="bx1">
+        <h1 id="hr">00</h1>
+        <h1>:</h1>
+        <h1 id="min">00</h1>
+        <h1>:</h1>
+        <h1 id="sec">00</h1>
+      </div>
+      <div class="bx2">
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    //terget all html element....................
+    let form = document.querySelector("form");
+    let hrTag = document.getElementById("hr");
+    let minTag = document.getElementById("min");
+    let secTag = document.getElementById("sec");
+    const hour = document.querySelector(".hrr");
+    const mini = document.querySelector(".mini");
+    const seco = document.querySelector(".secc");
+/// takeing -g vereable.............
+    let hr = 0;
+    let min = 5;
+    let sec = 60;
+    let count = 0;
+    let time = false;
+
+   //timer function..........
+    let timerr = () => {
+      if (time == true) {
+        if (count == 0) {
+          min = min - 1; /// on first time funtion invock min valu - 1
+          count++
+        }
+        sec = sec - 1;
+        if (sec == 0) {
+          min = min - 1;
+          sec = 60;
+        }
+        if (min == 0) {
+          if (hr == 0) {
+            min = 60;
+            sec = 60;
+          }
+          if (hr == 1) {
+            hr = 0;
+            min = 60;
+            sec = 60;
+          }
+          if (hr > 1) 
+          hr = hr - 1;
+          min = 60;
+          sec = 60;
+        }
+      }
+      if (sec == 0) {
+        secTag.innerHTML = sec;
+      } else{
+        secTag.innerHTML = `${sec} sec`;
+      }
+      if (min == 0) {
+        minTag.innerHTML = min;
+      } else{
+        minTag.innerHTML = `${min} min`;
+      }
+      if (hr == 0) {
+        hrTag.innerHTML = hr;
+      } else{
+        hrTag.innerHTML = `${hr} hr`;
+      }
+
+    };
+
+    /// function for taking user input ...........
+    let hendaleSubmit = (e) => {
+      e.preventDefault();
+      hr = hour.value;
+      min = mini.value;
+      sec = seco.value; 
+      if (sec == 0) {
+        sec = 60;
+      } else {
+        sec;
+      }
+      console.log(hr, min, sec);
+      timerr(hr, min, sec);
+    };
+// function for invoking "timerr" function in every sec..
+    let timer = setInterval(() => {
+      timerr();
+    }, 1000);
+  
+// start event function for timer start
+    function start() {
+      if (time == false) {
+        time = true;
+        timer;
+      }
+    }
+    /// timerr pause............
+    function pause() {
+      if (time == true) {
+        time = false;
+      }
+    }
+/// timer reset.............
+    function reset() {
+      timer = false;
+      if ((count = 1)) {
+        clearInterval(timer);
+        count = 0
+      }
+      if (form != "") {
+        hr = hour.value;
+        min = mini.value;
+        sec = seco.value;
+      }
+      hr = 0
+      min = 5
+      sec = 60
+      hrTag.innerHTML = `${hr} Hr` ;
+      minTag.innerHTML =`${min} Min`;
+      secTag.innerHTML =  `${sec} Sec`;
+
+    }
+    // terget all button element.....................
+    let starts = document.querySelector("#start");
+    let pausee = document.querySelector("#pause");
+    let resett = document.querySelector("#reset");
+    // event function........................................
+    form.addEventListener("submit", (e) => {
+      hendaleSubmit(e);
+    });
+    starts.addEventListener("click", start);
+    pausee.addEventListener("click", pause);
+    resett.addEventListener("click", reset);
+  </script>
+</html>
