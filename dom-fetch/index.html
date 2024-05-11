@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>using fetch method</title>
+    <style>
+      body {
+          text-align: center;
+      }
+      #root {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        justify-items: center;
+      }
+      #root > div {
+        margin: 30px;
+        padding: 10px;
+        box-shadow: 0px 0px 2px 2px rgb(0, 0, 0, 0.2);
+      }
+      div>img{
+          width: 100px;
+          height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fetching and Displaying Users using API</h1>
+    <div id="root"></div>
+  </body>
+  <script src="index.js"></script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>country population</title>
+    <style>
+      .hed {
+        text-align: center;
+      }
+      #root {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        justify-items: center;
+        margin-top: 40px;
+        gap: 20px;
+      }
+      .card {
+        padding: 7px;
+        width: 200px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hed">
+      <h1>All Countries and There Population</h1>
+      <div>
+        <label for="inputFild">See Countries By Population</label>
+        <select id="InputFild">
+          <option>Select</option>
+          <option value="high">High</option>
+          <option value="low">Low</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="root"></div>
+  </body>
+  <script src="script.js"></script>
+</html>
