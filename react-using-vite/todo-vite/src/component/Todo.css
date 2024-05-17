@@ -1,0 +1,27 @@
+.todoLists{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    margin: 30px auto;
+    width: 70%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: rgb(253, 254, 255);
+}
+.todoLists >button{
+    width: 30px;
+    position: relative;
+    right:10px;
+}
+.todoLists >h3{
+    position: relative;
+    right:10px;
+}
+.hed>input{
+    height: 40px;
+    width: 400px;
+    margin-right: 10px;
+}
+.hed>button{
+    height: 40px;
+}
