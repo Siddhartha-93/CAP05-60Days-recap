@@ -7,29 +7,26 @@ function DynamicFocus() {
     inputfld2 : "",
     inputfld3 : ""
   });
-  let [count, setCount] = useState(0);
   function hendelClick(i) {
-    // count < 2 ? setCount(count + 1) : setCount(0);
-    // inputRef.current[i].focus();
-    console.log(inputRef.current.inputfld1);
-  console.log(i);
+    inputRef.current[i].focus();
+
   }
   return (
     <>
       <div>
-        <div style={{ margin: "20px" }}
-        onClick={(ele) => hendelClick(ele)}>
+        <div style={{ margin: "20px" }}>
           <label htmlFor="inputFld1" >
             Input Fild 1
           </label>
           <input
             name="inputfld1"
             type="text"
-            ref = {inputRef}
+            ref={(el) => (inputRef.current[0] = el)}
           />
         </div>
+
         <div style={{ margin: "20px" }}>
-          <label htmlFor="inputFld2" onClick={() => hendelClick(count)}>
+          <label htmlFor="inputFld2" >
             Input Fild 2
           </label>
           <input
@@ -38,6 +35,7 @@ function DynamicFocus() {
             ref={(el) => (inputRef.current[1] = el)}
           />
         </div>
+
         <div style={{ margin: "20px" }}>
           <label htmlFor="inputFld3" onClick={(i) => hendelClick(i)}>
             Input Fild 3
@@ -48,6 +46,7 @@ function DynamicFocus() {
             ref={(el) => (inputRef.current[2] = el)}
           />
         </div>
+        <button  onClick={(ele) => hendelClick(ele)}>change Field</button>
       </div>
     </>
   );

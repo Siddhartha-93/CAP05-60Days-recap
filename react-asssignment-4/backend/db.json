@@ -1,0 +1,76 @@
+{
+  "tickets": [
+    {
+      "id": "1",
+      "title": "Create API Endpoints",
+      "description": "Develop RESTful API endpoints for the new feature module.",
+      "status": "Progress",
+      "priority": 6,
+      "assignee": "Alice"
+    },
+    {
+      "id": "2",
+      "title": "sdcsvd",
+      "description": "csdcsdc",
+      "assignee": "dcsdcs",
+      "priority": "4",
+      "status": "progress"
+    },
+    {
+      "id": "4",
+      "title": "Enhance Security",
+      "description": "Implement additional security measures such as rate limiting and input validation.",
+      "status": "Progress",
+      "priority": 7,
+      "assignee": "Alice"
+    },
+    {
+      "id": "5",
+      "title": "Upgrade Dependencies",
+      "description": "Upgrade project dependencies to the latest stable versions.",
+      "status": "Pending",
+      "priority": 1,
+      "assignee": "Eve"
+    },
+    {
+      "id": "6",
+      "title": "Optimize Database Queries",
+      "description": "Analyze and optimize slow-running database queries.",
+      "status": "Progress",
+      "priority": 10,
+      "assignee": "Charlie"
+    },
+    {
+      "id": "7",
+      "title": "Design UI Mockups",
+      "description": "Create UI mockups for the upcoming project using Figma.",
+      "status": "Completed",
+      "priority": 3,
+      "assignee": "Ivy"
+    },
+    {
+      "id": "8",
+      "title": "Implement Authentication",
+      "description": "Add user authentication and authorization to the web application.",
+      "status": "Pending",
+      "priority": 9,
+      "assignee": "Hank"
+    },
+    {
+      "id": "9",
+      "title": "Set Up CI/CD Pipeline",
+      "description": "Configure a CI/CD pipeline for automated testing and deployment.",
+      "status": "Completed",
+      "priority": "9",
+      "assignee": "Ivy"
+    },
+    {
+      "id": "10",
+      "title": "Document API",
+      "description": "Write comprehensive documentation for the public API.",
+      "status": "Completed",
+      "priority": 5,
+      "assignee": "Hank"
+    }
+  ]
+}
